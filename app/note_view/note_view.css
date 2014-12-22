@@ -1,0 +1,30 @@
+.note-container{
+	/*background-color: #7ABD9E;*/
+		background-color: #7d7d7d;
+}
+.note-list > md-content.note-container{
+	/*background-color: #7ABD9E;	*/
+	background-color: #7d7d7d;
+	/*background-color: #fff;*/
+}
+
+.note-list md-card.note-card{
+	min-width: 200px;
+	width: 200px;
+	height: 100px;
+	cursor: pointer;
+	background-color: yellow;
+}
+.note-list md-card.note-card{	
+}
+
+.scale-anim.ng-enter, .scale-anim.ng-leave.ng-leave-active{
+ transition: 0.5s;
+ -webkit-transform: scale(0);
+         transform: scale(0);	 
+}
+
+.scale-anim.ng-enter.ng-enter-active, .scale-anim.ng-leave{
+	-webkit-transform: scale(1);
+	        transform: scale(1);	
+}

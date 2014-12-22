@@ -1,0 +1,103 @@
+<link rel="stylesheet" type="text/css" href="lesson_view/lesson_view.css">
+<link rel="stylesheet" type="text/css" href="detail_lesson_view/detail_lesson_view.css">
+
+<div class="background small">
+		<md-toolbar class="md-accent">
+    <h1 class="md-toolbar-tools">
+    	<md-button class="md-fab md-accent" md-theme="cyan" aria-label="back" ng-click="navBack()">
+    		<md-icon icon="/img/ic_arrow_back.svg"></md-icon>
+    	</md-button>
+      <div flex layout="row" layout-align="center center">
+      	<img src="img/newell.png" height="56" class="hero" hero-id="logo">
+      </div>
+      <md-button class="md-fab md-accent" aria-label="note" md-theme="cyan" ng-click="editNote()">
+        <md-icon icon="/img/ic_comment.svg">
+        </md-icon>
+      </md-button>
+    </h1>
+  </md-toolbar>
+	</div>
+<div class="{{::id}}-lesson" flex layout="column">
+	<div class="lesson-container" flex layout="row">
+			<div class="background-category" layout="row" layout-align="center center">	
+				<img ng-src="img/{{id}}.png" class="background-image hero" hero-id="image" style="width: 200px; margin-left: -100px;">
+			</div>
+			<div class="detail-container hero" hero-id="detail-lesson" flex layout="row" layout-margin layout-fill>
+					<md-whiteframe class="md-whiteframe-z1" flex layout="column">
+						<div class="editor-container" flex layout="column" layout-fill style="background-color: #FFEB3B">
+							<div class="content-section" flex ng-class="sectionSelected === 'content' ? 'flex-9': 'collapse'" layout="column">
+									<div flex layout="column" ng-click="selectContent()">
+										<md-content layout-margin style="margin: 0px">
+										<div layout-margin>
+										<h1 class="main-title">{{title}}</h1>
+										<div class="main-content" flex>
+											{{content}}											
+										</div>
+										<div class="practice-content">
+											<pre><code>
+												{{practiceContent}}
+											</code></pre>
+										</div>
+										</div>
+										</md-content>
+									</div>								
+									<md-button class="md-fab md-primary footer-button" md-theme="cyan" aria-label="Edit" ng-show="sectionSelected === 'content'" ng-click="selectCode(); $event.stopPropagation();">
+					          <md-icon icon="/img/ic_create.svg" style="width: 24px; height: 24px;" ></md-icon>
+					        </md-button>
+					       	<md-button class="md-fab md-primary footer-button" md-theme="cyan" aria-label="Read" ng-show="sectionSelected === 'code'" ng-click="runScript(); $event.stopPropagation();">
+					          <md-icon class="icon-read" icon="/img/ic_done.svg" style="width: 24px; height: 24px;"></md-icon>					        
+									</md-button>
+							</div>
+							<div class="code-section" flex ng-click="selectCode()" ng-class="sectionSelected === 'code' ? 'flex-9': 'collapse'" layout="column">
+								<md-tabs class="md-accent" md-selected="selectedTabIndex">
+						      <md-tab id="{{::tab.name+'-tab'}}" aria-controls="{{::tab.name+'-content'}}" aria-controls="tab1-content" ng-repeat="tab in tabs track by $index">
+						      	{{tab.name | uppercase}}
+						      </md-tab>  
+						    </md-tabs>
+						    <ng-switch on="selectedTabIndex" class="tabpanel-container" flex style="background-color: blue;" layout="column">
+					        <div role="tabpanel" id="html-content" aria-labelledby="html-tab" ng-switch-when="0" md-swipe-left="tabNext()" md-swipe-right="tabPrevious()" flex layout="column">
+					            <div flex focus ng-model="data.htmlModel" ui-ace="{
+											  useWrapMode : true,
+											  showGutter: true,
+											  theme:'monokai',
+											  mode: 'html',
+											  firstLineNumber: 5,
+											  onLoad: aceLoaded,
+											  onChange: aceChanged
+											}"></div>
+					        </div>
+					        <div role="tabpanel" id="css-content" aria-labelledby="css-tab" ng-switch-when="1" md-swipe-left="tabNext()" md-swipe-right="tabPrevious()" flex layout="column">  
+					            <div flex ng-model="data.cssModel" ui-ace="{
+											  useWrapMode : true,
+											  showGutter: true,
+											  theme:'monokai',
+											  mode: 'css',
+											  firstLineNumber: 5,
+											  onLoad: aceLoaded,
+											  onChange: aceChanged
+											}"></div>
+					        </div>
+					        <div flex role="tabpanel" id="js-content" aria-labelledby="js-tab" ng-switch-when="2" md-swipe-left="tabNext()" md-swipe-right="tabPrevious()" flex layout="column">
+					            <div flex ng-model="data.jsModel" ui-ace="{
+											  useWrapMode : true,
+											  showGutter: true,
+											  theme:'monokai',
+											  mode: 'javascript',
+											  firstLineNumber: 5,
+											  onLoad: aceLoaded,
+											  onChange: aceChanged
+											}">
+											</div>
+					        </div>
+					    </ng-switch>								
+							</div>
+						</div>
+					</md-whiteframe>
+					<md-whiteframe class="md-whiteframe-z1" flex layout="column">
+						<div class="run-container" flex layout="column">
+							<iframe flex src="about:blank" width="100%" height="100%" frameborder="0" id="frameResult"></iframe>
+						</div>
+					</md-whiteframe>				
+			</div>			
+	</div>	
+</div>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Newell App</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">  
+  <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="app.css">    
+  <link href="bower_components/angular-hero/angular-hero.css" rel="stylesheet" />
+  <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+<body layout="column" ng-controller="AppCtrl" style="overflow-y: hidden">
+  <div ng-view flex layout="column"class="page-transition hero-transition" ng-class="{{shareData.detailView ? 'page-transition': ''}}"></div>
+
+  <!-- <div>Newell app: v<span app-version></span> <a href="/auth/twitter">abc</a></div> -->
+    
+  <script type="text/javascript" src="bower_components/ace-builds/src-min-noconflict/ace.js"></script>
+  <script src="bower_components/angular/angular.js"></script>  
+  <script type="text/javascript" src="bower_components/angular-ui-ace/ui-ace.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>  
+  <script src="bower_components/angular-aria/angular-aria.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-hero/angular-hero.js"></script>
+  <script src="bower_components/hammerjs/hammer.js"></script>
+  <script src="bower_components/angular-material/angular-material.js"></script>    
+  <script src="app.js"></script>
+  <script src="login_view/login.ctrl.js"></script>  
+  <script src="main_view/main.ctrl.js"></script>  
+  <script src="lesson_view/lesson.ctrl.js"></script>  
+  <script src="detail_lesson_view/detail_lesson.ctrl.js"></script> 
+  <script src="note_view/note.ctrl.js"></script> 
+  <script src="profile_view/profile.ctrl.js"></script> 
+  <script src="terminal_view/terminal.ctrl.js"></script> 
+  <script src="components/version/version.js"></script>
+  <script src="components/version/version-directive.js"></script>
+  <script src="components/version/interpolate-filter.js"></script>
+</body>
+</html>

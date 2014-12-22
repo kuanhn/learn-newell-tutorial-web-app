@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "driver": "mysql",
+    "user": "master",
+    "database": "your_database",
+    "password": "your_password"
+  },
+ 
+  "production": {
+    "driver": "mysql",
+    "user": "master",
+    "database": "your_database",
+    "password": "your_password"
+  }
+}

@@ -1,0 +1,44 @@
+<link rel="stylesheet" type="text/css" href="profile_view/profile_view.css">
+<md-dialog aria-label="Note" ng-controller="ProfileCtrl" style="min-width: 520px; height: 500px;" layout="column">
+    <md-content class="profile-container" layout="column" flex>
+        <div flex>
+        	<div layout="row" class="header">
+            <h2>Your profile</h2>
+            <span flex></span>
+            <md-button class="md-fab md-accent" md-theme="cyan" aria-label="back" ng-click="enableEdit()">
+    					<md-icon icon="/img/ic_create.svg"></md-icon>
+    				</md-button>
+          </div>
+            <div flex layout="column" layout-fill>
+	            <div class="row" layout="row">	                
+	                <md-input-group class="long" ng-disabled="true">
+								    <label for="email">Email</label>
+								    <md-input id="email" ng-model="user.email" type="email">
+								    </md-input>
+									</md-input-group>
+	            </div>
+	            <div class="row" layout="row">	                
+	                <md-input-group ng-hide="!editable" class="long">
+								    <label for="password">New Password</label>
+								    <md-input id="password" ng-model="user.password" ng-change="notifyChange()">
+								    </md-input>
+									</md-input-group>
+	            </div>
+	            <div class="row" layout="row">     
+	                <md-input-group ng-hide="!editable" class="long">
+								    <label for="confirm_password">Confirm Password</label>
+								    <md-input id="confirm_password" ng-model="user.confirmPassword">
+								    </md-input>
+									</md-input-group>
+	            </div>
+            </div>
+        </div>
+        <div class="row" layout="row">
+            <md-button ng-click="signout()" class="md-primary" style="margin-top: 5px; margin-right: 5px;">SIGN OUT</md-button>
+            <span flex></span>
+            <md-button ng-click="updateAccount()" class="scale-anim md-raised md-primary md-fab" ng-show="userChange && user.password == user.confirmPassword">
+            	<md-icon icon="/img/ic_done.svg" ></md-icon>
+            </md-button>
+        </div>
+    </md-content>
+</md-dialog>

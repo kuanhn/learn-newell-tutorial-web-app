@@ -1,0 +1,37 @@
+<link rel="stylesheet" type="text/css" href="main_view/main_view.css">
+
+<div layout="column" flex>
+	<div class="background" ng-class="data.detailView? 'small' : ''">
+		<div class="md-accent" layout="row" layout-align="center center">
+			<img src="img/newell_large.png" class="hero" hero-id="logo" height="100">
+		</div>
+	</div>
+	<div flex layout="column" class="main-container">
+		<!-- <div ng-switch="data.selected">
+			<div ng-switch-when="html">
+				<ng-include src="'lesson_view/lesson_view.html'" scope="" onload=""></ng-include>
+			</div>
+			<div ng-switch-when="css"></div>
+			<div ng-switch-when="js"></div>
+			<div ng-switch-default> -->
+				<md-content flex layout="column">
+					<div layout="row" class="row large" style="overflow: hidden; flex: 2" flex>
+						<md-card layout="column" class="category-card slide-down delay-anim{{::$index}} {{category.id}}-category" ng-class="data.selected === category.id ? '': ''" ng-repeat="category in mainCategories track by $index" ng-click="selectMainCategory($index)" flex hero-id="{{::category.id}}" layout-align="start center" style="margin-bottom: 0;">
+							<div layout="row" layout-align="center center" flex layout-fill style="margin-top: 45px;">
+								<img ng-src="img/{{::category.img}}" hero-id="image" ng-class="data.selected === category.id ? 'hero': ''">
+							</div>
+						</md-card>
+					</div>
+					<div layout="row" class="row small" style="overflow: hidden;" flex>
+						<md-card class="category-card slide-up delay-anim{{::$index}} {{category.id}}-category {{$index === 2 ? 'large':'small'}}" ng-repeat="category in categories track by $index" flex layout="row" layout-align="center center" ng-click="selectCategory($index)" ng-class="data.selected === category.id ? '': ''" hero-id="{{::category.id}}" style="padding: 0;">	
+							<div layout="row" layout-align="center center" flex>
+								<img src="img/{{::category.img}}" hero-id="image" ng-class="data.selected === category.id ? 'hero': ''" layout-fill>
+							</div>					
+						</md-card>						
+					</div>			
+				</md-content>
+			<!-- </div>
+		</div> -->
+	</div>	
+  </div>
+</div>

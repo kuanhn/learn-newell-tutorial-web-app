@@ -1,0 +1,108 @@
+body {
+    height: 100%;
+}
+.background .md-accent {
+    transition: 0.5s all;
+    height: 100px;
+    background-color: #2196F3;
+}
+/*.background.small .md-accent {
+    height: 50px;
+}*/
+.background.hide .md-accent {
+    height: 0px;
+}
+/*md-content .row {
+    background-color: #7d7d7d;
+}*/
+.main-container > md-content {
+    background-color: #7d7d7d;
+}
+.main-container md-content md-card {
+    display: inline-block;
+}
+md-card.category-card {
+    width: 32%;
+    padding: 16px;
+    background-color: #fff;
+    cursor: pointer;
+}
+.flex-2{
+	flex: 2;
+}
+.row.large {
+    height: 60%;
+}
+.row.large {
+    height: 60%;
+}
+.row.large md-card.category-card{
+    margin-right: 0;
+}
+.row.large md-card.category-card:last-child{
+    margin-right: 8px;
+}
+.row.small md-card.category-card{
+    margin-left: 0;
+}
+.row.small md-card.category-card:first-child{
+    margin-left: 8px;
+}
+.row.small .large{
+    flex: 2;
+}
+.row.small {
+    height: 40%;
+}
+md-card.html-category {
+    background-color: #FFFF8D;
+}
+md-card.css-category {
+    background-color: #B9F6CA;
+}
+md-card.js-category {
+    background-color: #B388FF;
+}
+md-card.note-category {
+    background-color: #7ABD9E;
+}
+md-card.badge-category {
+    background-color: #1BBC9B;
+}
+md-card.terminal-category {
+    background-color: #FF7171;
+}
+md-card.project-category {
+    background-color: #FCF7DA;
+}
+md-card.profile-category {
+    background-color: #F5F5F5;
+}
+/* Transaction */
+.slide-up.ng-enter {
+    transition: 1s ease-in-out;
+    -webkit-transform: translateY(500px);
+    transform: translateY(500px);
+}
+.slide-up.ng-enter.ng-enter-active {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+}
+.slide-down.ng-enter {
+    transition: 1s ease-in-out;
+    -webkit-transform: translateY(-500px);
+    transform: translateY(-500px);
+}
+.slide-down.ng-enter.ng-enter-active {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+}
+.slide-up.delay-anim0, .slide-down.delay-anim0 {
+    transition-delay: 0.1s;
+}
+.slide-up.delay-anim2, .slide-down.delay-anim2 {
+    transition-delay: 0.5s;
+}
+.slide-up.delay-anim3, .slide-down.delay-anim3 {
+    transition-delay: 0.2s;
+}

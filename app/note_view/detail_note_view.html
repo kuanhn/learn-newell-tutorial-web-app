@@ -1,0 +1,20 @@
+<link rel="stylesheet" type="text/css" href="note_view/note_view.css">
+<md-dialog aria-label="Note" ng-controller="DetailNoteCtrl" style="min-width: 520px; height: 500px;" layout="column">
+  <md-content layout="column" flex>
+    <h1 class="md-subheader" style="padding-left: 0px; font-size: 1em;">
+    	<label>Note</label>
+    </h1>
+    <div flex layout="row">
+    	<textarea ng-model="noteContent" required layout-fill></textarea>
+    </div>    
+ 	</md-content>
+ 	<div class="md-actions" layout="row">
+	 	<md-button class="md-primary" md-theme="cyan" ng-click="toLesson()"> 
+	 		To Lesson	
+	 	</md-button>
+        <span flex></span>
+        <md-button class="md-primary scale-anim" md-theme="cyan" ng-click="updateNote()" ng-show="noteContent != oldContent"> 
+            {{command}}         
+        </md-button>
+	</div>
+</md-dialog>

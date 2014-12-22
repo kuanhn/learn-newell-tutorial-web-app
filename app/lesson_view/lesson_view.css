@@ -1,0 +1,124 @@
+img.background-image{
+	opacity: 0.3;
+}
+
+.html-lesson{
+	background-color: #FFFF8D;
+}
+.css-lesson{
+	background-color: #B9F6CA;
+}
+.js-lesson{
+	background-color: #B388FF;
+}
+
+.lesson-container{	
+	height: 100%;
+}	
+
+.detail-container{
+	width: 100%;
+}
+
+.background .md-accent{
+	transition: 0.5s all;
+    height: 100px;
+    background-color: #2196F3;
+}
+
+.background.small .md-accent{
+    height: 56px;
+}	
+
+.background md-toolbar .md-toolbar-tools .md-button, 
+.background md-toolbar .md-toolbar-tools .md-button:hover, 
+.background md-toolbar .md-toolbar-tools .md-button:focus {
+  box-shadow: none;
+  border: none;
+  transform: none;
+  -webkit-transform: none; }
+.md-button.md-cyan-theme.md-raised.md-primary, .md-button.md-cyan-theme.md-fab.md-primary {
+  color: white;
+  background-color: #00bcd4; 
+}
+
+.lesson-card{
+	background-color: yellow;
+}
+.orange-card{
+	background-color: #FFC425;
+}
+.red-card{
+	background-color: #ED4552;
+}
+.blue-card{
+	background-color: #0095B5;
+}
+.green-card{
+	background-color: #82C343;
+}
+
+.lesson-list{	
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+.lesson-list md-card{
+	margin-right: 20px;
+	margin-left: 20px;
+	margin-bottom: 20px;
+}
+
+.lesson-list .row{
+	-webkit-flex-wrap: wrap;
+	    -ms-flex-wrap: wrap;
+	        flex-wrap: wrap;
+}
+
+.lesson-card{
+	min-width: 200px;
+	width: 200px;
+	height: 100px;
+}
+
+.lesson-card md-icon{
+	border: solid 1px green;
+	border-radius: 50%;	
+	background-color: green;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+
+}
+
+md-card.lesson-card{
+	cursor: pointer;
+}
+
+
+/* Transition */
+.scale-anim.ng-enter, .scale-anim.ng-leave.ng-leave-active{
+ transition: 1s;
+ -webkit-transform: scale(0);
+         transform: scale(0);	 
+}
+
+.scale-anim.ng-enter.ng-enter-active, .scale-anim.ng-leave{
+	-webkit-transform: scale(1);
+	        transform: scale(1);	
+}
+
+.page-transition.ng-enter, .page-transition.ng-leave {
+  transition: opacity ease-in-out 500ms;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.page-transition.ng-enter, .page-transition.ng-leave.ng-leave-active {
+  opacity: 0;
+}
+.page-transition.ng-enter.ng-enter-active {
+  opacity: 1;
+}

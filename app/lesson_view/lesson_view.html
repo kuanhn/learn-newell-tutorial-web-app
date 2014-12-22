@@ -1,0 +1,35 @@
+<link rel="stylesheet" type="text/css" href="lesson_view/lesson_view.css">
+
+<div class="background small">
+		<md-toolbar class="md-accent">
+    <h1 class="md-toolbar-tools">
+    	<md-button class="md-fab md-accent" md-theme="cyan" aria-label="back" ng-click="navBack()">
+    		<md-icon icon="/img/ic_arrow_back.svg"></md-icon>
+    	</md-button>
+      <div flex layout="row" layout-align="center center">
+      	<img src="img/newell.png" height="56" class="hero" hero-id="logo">
+      </div>
+    </h1>
+  </md-toolbar>
+	</div>
+<div class="{{::id}}-lesson hero" hero-id="{{::id}}" flex layout="row" layout-align="center center">
+	<div class="lesson-container" flex layout="row">
+			<div class="background-category" layout="column" layout-align="center">	
+				<img ng-src="img/{{id}}.png" class="background-image hero" hero-id="image">				
+			</div>		
+			<div flex class="lesson-list">
+				<md-content flex class="{{::id}}-lesson">
+					<div layout="row" style="overflow: hidden; " class="row" layout-align="start start">
+						<md-card class="lesson-card scale-anim" style="transition-delay: {{::($index)/8}}s; position: relative;" ng-repeat="lesson in lessons track by $index" ng-click="selectLesson(lesson)" hero-id="detail-lesson" ng-class="selected === lesson.id ? 'hero': ''">
+							<div layout="row" flex style="height: 100%;">
+								<div style="height: 100px; width: 100%;">
+									{{lesson.name}}
+								</div>								
+								<md-icon class="footer-icon" icon="img/ic_done.svg" style="width: 24px; height: 24px;" ng-show="lesson.state === 'passed'"></md-icon>
+							</div>
+						</md-card>
+					</div>					
+				</md-content>
+			</div>
+	</div>	
+</div>

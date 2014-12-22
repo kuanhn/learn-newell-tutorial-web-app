@@ -1,0 +1,87 @@
+.detail-container{	
+	/*margin-right: 10px;
+	margin-left: 10px;*/
+	/*min-height: 548px;*/
+	/*height: 100%;*/
+}
+
+.editor-container{
+	background-color: yellow;	
+}
+
+.content-section{	
+	transition: 1s all;	
+
+	background-color: yellow;
+	position: relative;		
+}
+.content-section md-content{
+	background-color: yellow;
+}
+.content-section .main-title{
+	transition: 1s all;	
+
+	-webkit-transform: scale(1);
+	        transform: scale(1);		  
+}
+.content-section.collapse{
+	cursor: pointer;	
+}
+.content-section.collapse .main-title{
+	-webkit-transform: scale(0.6);
+	        transform: scale(0.6);
+	-webkit-transform-origin: left top;
+	        transform-origin: left top;	
+}
+
+.code-section{
+	transition: 1s all;	
+}
+.code-section.collapse{
+	cursor: pointer;
+}
+
+.run-container{
+	background-color: #fff;	
+}
+
+.editor-container, .run-container{	
+}
+
+.footer-button{
+	position: absolute;
+	bottom: -28px;
+	right: 12px;	
+}  
+
+/* custom flex */
+.flex-9{
+	-webkit-flex: 9;
+	    -ms-flex: 9;
+	        flex: 9;
+}
+.flex-8{
+	-webkit-flex: 8;
+	    -ms-flex: 8;
+	        flex: 8;
+}
+.flex-7{
+	-webkit-flex: 7;
+	    -ms-flex: 7;
+	        flex: 7;
+}
+.flex-4{
+	-webkit-flex: 4;
+	    -ms-flex: 4;
+	        flex: 4;
+}
+.flex-3{
+	-webkit-flex: 3;
+	    -ms-flex: 3;
+	        flex: 3;
+}
+.flex-2{
+	-webkit-flex: 2;
+	    -ms-flex: 2;
+	        flex: 2;
+}

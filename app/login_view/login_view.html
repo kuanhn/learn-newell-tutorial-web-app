@@ -1,0 +1,74 @@
+<link rel="stylesheet" type="text/css" href="login_view/login_view.css">
+
+<div layout="column" flex>
+	<div class="background">
+		<div class="md-accent">
+			<div flex layout="row" layout-align="center center">
+      	<img src="img/logo_login.png" height="160">
+      </div>
+		</div>
+	</div>
+	<div layout="row" layout-align="center center" flex>
+	<div class="background">
+			<div class="md-accent"></div>
+		</div>
+	<md-content class="login-container">					
+		<md-card ng-show="isSelected(0)">
+			<form novalidate class="login-form" name="loginForm">
+				<h2>Sign in</h2>
+				<div class="row">
+					<md-text-float class="long" label="Email" ng-model="user.email" type="email" required></md-text-float>
+				</div>
+				<div class="row">
+					<md-text-float class="long" label="Password" ng-model="user.password" type="password" required></md-text-float>
+				</div>
+				<div class="row" layout="row" layout-align="end end">
+					<md-button ng-disabled="!user.email || !user.password" ng-click="signIn()" name="submitButton" class="md-raised md-primary">Sign in</md-button>
+				</div>
+			</form>
+		</md-card>
+		<md-card ng-show="isSelected(1)" >
+			<form novalidate class="forget-password" name="forgetPasswordForm">
+				<h2>Forget password</h2>
+				<p>Enter your email that you used to sign in <a href="#/">Newell</a></p>
+				<div class="row">
+					<md-text-float name="email" class="long" label="Email" ng-model="user.email" type="email"></md-text-float>
+					<!-- <span ng-show="forgetPasswordForm.email.$error.email">This email format is invalid!</span> -->
+				</div>	      
+				<div class="row" layout="row" layout-align="end end">
+					<md-button name="submitButton" ng-disabled="!user.email" ng-click="confirmSentEmail($event)" class="md-raised md-primary">Confirm</md-button>
+				</div>
+			</form>
+		</md-card>
+		<md-card ng-show="isSelected(2)" >
+			<form novalidate class="forget-password" name="signUpForm">
+				<h2>Sign up</h2>
+				<div class="row">
+					<md-text-float class="long" label="Email" ng-model="user.email" type="email"></md-text-float>
+				</div>
+				<div class="row">
+					<md-text-float class="long" label="Password" ng-model="user.password" type="password"></md-text-float>
+				</div>
+				<div class="row">
+					<md-text-float class="long" label="Confirm password" ng-model="user.connfirmPassword" type="password"></md-text-float>
+				</div>
+				<div class="row">
+					<p>By submitting this form, you agree that you have read and understood our <a href="#/privacy-policy">Privacy Policy</a> and you agree to them.</p>
+				</div>
+				<div class="row" layout="row" layout-align="end end">
+					<md-button name="submitButton" ng-disabled="!user.email || !user.password || (user.password != user.connfirmPassword)" ng-click="signupAccount($event)" class="md-raised md-primary">Sign up</md-button>
+				</div>
+			</div>
+			</form>
+		</md-card>
+
+    <div class="menu" layout="row" layout-align="center center">
+    	<div class="menu-item" ng-repeat="select in selections track by $index">
+    		<a href="{{::select.url}}">
+    			{{::select.name}}
+    		</a>
+    	</div>
+    </div>
+  </md-content>
+  </div>
+</div>

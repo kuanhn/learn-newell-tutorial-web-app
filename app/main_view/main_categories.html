@@ -1,0 +1,16 @@
+<md-content flex>
+  <div layout="row" class="row large" style="overflow: hidden">
+    <md-card class="category-card slide-down delay-anim{{::$index}}" ng-repeat="category in mainCategories track by $index" ng-click="selectCategory()" flex>
+      <div layout="row" layout-align="center center" flex>
+        <img src="img/{{::category.img}}">
+      </div>
+    </md-card>
+  </div>
+  <div layout="row" class="row small" style="overflow: hidden">
+    <md-card class="category-card slide-up delay-anim{{::$index}}" ng-repeat="category in categories track by $index" flex layout="row" layout-align="end end">
+      <div layout="row" layout-align="center center" flex>
+        <img src="img/{{::category.img}}">
+      </div>
+    </md-card>
+  </div>
+</md-content>

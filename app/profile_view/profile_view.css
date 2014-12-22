@@ -1,0 +1,54 @@
+
+.profile-container .header .md-button, 
+.profile-container .header .md-button:hover, 
+.profile-container .header .md-button:focus {
+  box-shadow: none;
+  border: none;
+  transform: none;
+  -webkit-transform: none; 
+}
+/*body{
+	height: 100%;
+}
+
+.background{
+    height: 0px;    
+}
+
+.background .md-accent{
+    height: 200px;
+    background-color: #2196F3;
+}
+*/
+.profile-container md-card {
+  min-height: 150px; 
+  background-color: #fff;  
+}
+
+md-content.profile-container{
+	width: 500px;
+	margin: 0px;
+	margin-left: 0px;
+	margin-right: 0px;    
+  background-color:rgba(255,255,255,0);
+}  
+
+.profile-container .row md-input-group.long {
+	width: 100%;
+	margin-bottom: 30px;
+}
+.profile-container .row md-input-group.long > input {width: 100%;}
+
+/* Transition */
+.scale-anim.ng-hide{
+	-webkit-transform: scale(0);
+	        transform: scale(0);		
+}
+.scale-anim{
+	-webkit-transform: scale(1);
+	        transform: scale(1);		
+}
+
+.scale-anim.ng-hide-add.ng-hide-add-active{
+ transition: all 0.5s;
+}
