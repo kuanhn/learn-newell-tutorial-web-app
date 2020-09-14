@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "express": "~4.10.6",
-    "morgan": "~1.5.0",
+    "morgan": "~1.10.0",
     "body-parser": "~1.10.0",
     "method-override": "~2.3.0",
     "node-mysql": "~0.4.1",
